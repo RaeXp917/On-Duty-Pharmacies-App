@@ -1,4 +1,4 @@
-# On-Duty Pharmacy Finder (E-Pharmacies)
+# On-Duty Pharmacy (E-Pharmacies)
 
 A native Android application built with Kotlin to help users quickly find nearby on-duty pharmacies using OpenStreetMap, backed by a real-time Firebase database.
 

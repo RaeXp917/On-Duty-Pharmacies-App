@@ -33,5 +33,6 @@ Screenshots
 *   **Platform:** Android Studio
 *   **Backend & Database:** Firebase (Authentication, Realtime Database/Firestore)
 *   **Mapping:** OpenStreetMap (OSM)
+*   **MVVM** Architecture
 
 > **Note:** The source code for this project is kept in a private repository and is not publicly available. This repository serves as a showcase of the project's features and design.

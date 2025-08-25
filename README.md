@@ -1,5 +1,10 @@
 E-Pharmacies: On-Duty Pharmacy Finder
 
+<p align="center">
+<img src="./logo_banner.png" alt="E-Pharmacies Banner Logo" width="400">
+</p>
+<h1 align="center">E-Pharmacies: On-Duty Pharmacy Finder</h1>
+
 ![alt text](https://img.shields.io/badge/Kotlin-1.9.0-7F52FF.svg)
 
 ![alt text](https://img.shields.io/badge/Jetpack_Compose-1.6-4285F4.svg)
@@ -10,12 +15,12 @@ E-Pharmacies is a modern, native Android application designed to help users in G
 📸 Screenshots
 
 A glimpse into the user experience, from onboarding to finding a pharmacy.
-Welcome & Onboarding	Interactive Map	Pharmacy Details	Navigation Drawer & Features
-A clean introduction to the app's powerful features.	A fluid, real-time map displaying on-duty pharmacies.	Detailed information at a glance with quick actions.	Easy access to user profile, settings, and more.
-<img src="https://i.imgur.com/Gj3C8kU.png" width="250">	<img src="https://i.imgur.com/tH3G03v.png" width="250">	<img src="https://i.imgur.com/qEw6h5W.png" width="250">	<img src="https://i.imgur.com/86HwP5t.png" width="250">
-Login & Authentication	On-Duty Filter	Radius Search	Dark & Light Mode
-Secure sign-in and registration powered by Firebase.	Instantly filter to see only pharmacies that are currently open.	Find the closest pharmacy or expand your search up to 5km.	A seamless experience in any lighting condition.
-<img src="https://i.imgur.com/MExhP8d.png" width="250">	<img src="https://i.imgur.com/gY96t2e.png" width="250">	<img src="https://i.imgur.com/gY96t2e.png" width="250">	<img src="https://i.imgur.com/86HwP5t.png" width="250">
+Welcome & Onboarding	Interactive Map	Pharmacy Details
+A clean introduction to the app's powerful features.	A fluid, real-time map showing on-duty pharmacies.	Detailed information at a glance with quick actions.
+<img src="./onboarding.png" width="250">	<img src="./map_main.png" width="250">	<img src="./map_details.png" width="250">
+Login & Authentication	Drawer Menu & Features
+Secure sign-in powered by Firebase, with multi-language support.	Easy access to profile, settings, in-app purchases, and more.
+<img src="./login.png" width="250">	<img src="./drawer_menu.png" width="250">
 ✨ Key Features
 
     Interactive Real-time Map: Displays all nearby pharmacies on an interactive OpenStreetMap view, with the user's location at the center.
@@ -50,17 +55,6 @@ The app is structured using the MVVM architecture pattern, which provides a clea
     ViewModel: The ViewModels (MapViewModel, AuthViewModel) act as the bridge between the UI and the Data Layer. They hold the UI state in StateFlow, handle user interactions, and execute business logic. By using viewModelScope, all asynchronous operations (like network calls to Firebase) are automatically managed and scoped to the ViewModel's lifecycle, preventing memory leaks.
 
     Model (Data Layer): This layer is responsible for data sourcing. It interacts directly with Firebase (Firestore and Authentication) for remote data and Jetpack DataStore for local user preferences (like saved email or onboarding status). This isolates data operations from the rest of the app.
-
-+------------------+      +-------------------+      +-------------------------+
-|      View        |      |     ViewModel     |      |      Data Layer         |
-| (Jetpack Compose)|      | (Android ViewModel|      | (Firestore, Auth,      |
-|  - MapScreen     |<---->|  StateFlow)       |<---->|  DataStore)             |
-|  - AuthScreen    |      |  - MapViewModel   |      |                         |
-|  - ...           |      |  - AuthViewModel  |      |  - Firebase Repository  |
-+------------------+      +-------------------+      |  - User Preferences     |
-                                                     +-------------------------+
-
-
 Key Technical Decisions & Why
 
     Kotlin as the Sole Language: Chosen for its conciseness, null safety, and excellent support for functional programming and coroutines, which are essential for modern Android development.
